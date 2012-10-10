@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+require 'githooks'
+
+class PreRebase < Githooks::Base
+end
+
+PreRebase.new.execute

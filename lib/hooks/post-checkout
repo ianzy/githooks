@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+require 'githooks'
+
+class PostCheckout < Githooks::Base
+end
+
+PostCheckout.new.execute

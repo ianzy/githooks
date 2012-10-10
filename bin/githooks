@@ -1,0 +1,41 @@
+#!/usr/bin/env ruby
+$LOAD_PATH.unshift File.dirname($0)
+$:.unshift File.dirname(__FILE__) + '/../lib'
+
+require 'optparse'
+require 'fileutils'
+require 'githooks'
+
+banner = <<-BANNER
+Usage: githooks [options]
+
+Description:
+
+  Initializtion and helper script for githooks
+
+BANNER
+
+OptionParser.new do |opts|
+  opts.banner = banner.gsub(/^ {6}/, '')
+
+  opts.separator ''
+  opts.separator 'Options:'
+  
+  opts.on('-i', '--install', 'Install githooks for the current project') do
+    exit unless system("git rev-parse")
+    git_root = `git rev-parse --show-toplevel`.chop
+    gem_root = File.expand_path "..", File.dirname($0)
+    FileUtils.cp_r(Dir["#{gem_root}/lib/hooks/*"], "#{git_root}/.git/hooks")
+  end
+  
+  opts.on( '-l', '--list', 'List supported git hooks') do
+    puts Githooks::HookNames
+    exit
+  end
+  
+  opts.on( '-h', '--help', 'Display this help.' ) do
+    puts opts
+    exit
+  end
+end.parse!
+

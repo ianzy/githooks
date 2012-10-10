@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+require 'githooks'
+
+class Update < Githooks::Base
+end
+
+Update.new.execute

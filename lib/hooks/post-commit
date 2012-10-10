@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+require 'githooks'
+
+class PostCommit < Githooks::Base
+end
+
+PostCommit.new.execute

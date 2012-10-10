@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+require 'githooks'
+
+class PrepareCommitMsg < Githooks::Base
+end
+
+PrepareCommitMsg.new.execute

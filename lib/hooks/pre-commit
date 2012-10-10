@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+require 'githooks'
+
+class PreCommit < Githooks::Base
+end
+
+PreCommit.new.execute

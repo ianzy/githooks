@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+require 'githooks'
+
+class PostReceive < Githooks::Base
+end
+
+PostReceive.new.execute

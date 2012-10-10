@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+require 'githooks'
+
+class PostApplypatch < Githooks::Base
+end
+
+PostApplypatch.new.execute

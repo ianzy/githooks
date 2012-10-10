@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+require 'githooks'
+
+class PostRewrite < Githooks::Base
+end
+
+PostRewrite.new.execute

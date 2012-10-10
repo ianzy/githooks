@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+require 'githooks'
+
+class ApplypatchMsg < Githooks::Base
+end
+
+ApplypatchMsg.new.execute

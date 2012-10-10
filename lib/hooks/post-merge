@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+require 'githooks'
+
+class PostMerge < Githooks::Base
+end
+
+PostMerge.new.execute

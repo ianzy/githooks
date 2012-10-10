@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+require 'githooks'
+
+class PreReceive < Githooks::Base
+end
+
+PreReceive.new.execute
