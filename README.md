@@ -1,6 +1,17 @@
 # Githooks
 
-TODO: Write a gem description
+A framework to manage git hooks with your repository. Codes in *_githooks.rb will be executed by the framework.
+
+## Convention
+The name of the hook file should look like this <name>_githooks.rb
+The typical directory structure with githooks will look like this,
+/Your repository
+  /lib
+  /app
+  ...
+  /hooks
+    example_githooks.rb
+    example2_githooks.rb
 
 ## Installation
 
@@ -18,7 +29,38 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+After the gem is installed, you need to initialize githooks in your repository.
+
+    $ githooks --init
+
+Following key words can be used in your githooks.rb files
+    applypatch_msg
+    pre_applypatch
+    post_applypatch
+    pre_commit
+    prepare_commit_msg
+    commit_msg
+    post_commit
+    pre_rebase
+    post_checkout
+    post_merge
+    pre_receive
+    post_receive
+    update
+    post_update
+    pre_auto_gc
+    post_rewrite
+
+## Example
+
+    pre_commit do
+      puts "executed in pre commit hook"
+    end
+
+    commit_msg do
+      puts "executed in commit msg hook"
+      exit -1
+    end
 
 ## Contributing
 

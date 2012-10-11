@@ -21,7 +21,7 @@ options = OptionParser.new do |opts|
   opts.separator ''
   opts.separator 'Options:'
   
-  opts.on('-i', '--install', 'Install githooks for the current project') do
+  opts.on('-i', '--init', 'Initialize githooks for the current repository') do
     exit unless system("git rev-parse")
     git_root = `git rev-parse --show-toplevel`.chop
     gem_root = File.expand_path "..", File.dirname($0)
