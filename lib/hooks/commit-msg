@@ -5,4 +5,4 @@ require 'githooks'
 class CommitMsg < Githooks::Base
 end
 
-CommitMsg.new.execute
+CommitMsg.new(ARGV).execute

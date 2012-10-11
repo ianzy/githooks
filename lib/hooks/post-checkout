@@ -5,4 +5,4 @@ require 'githooks'
 class PostCheckout < Githooks::Base
 end
 
-PostCheckout.new.execute
+PostCheckout.new(ARGV).execute

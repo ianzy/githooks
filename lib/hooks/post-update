@@ -5,4 +5,4 @@ require 'githooks'
 class PostUpdate < Githooks::Base
 end
 
-PostUpdate.new.execute
+PostUpdate.new(ARGV).execute

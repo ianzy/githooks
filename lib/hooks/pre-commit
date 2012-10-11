@@ -5,4 +5,4 @@ require 'githooks'
 class PreCommit < Githooks::Base
 end
 
-PreCommit.new.execute
+PreCommit.new(ARGV).execute

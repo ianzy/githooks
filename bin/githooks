@@ -23,9 +23,12 @@ options = OptionParser.new do |opts|
   
   opts.on('-i', '--init', 'Initialize githooks for the current repository') do
     exit unless system("git rev-parse")
+    puts "Copying git hooks..."
     git_root = `git rev-parse --show-toplevel`.chop
     gem_root = File.expand_path "..", File.dirname($0)
     FileUtils.cp_r(Dir["#{gem_root}/gems/githooks-#{Githooks::VERSION}/lib/hooks/*"], "#{git_root}/.git/hooks")
+    puts "git hooks initialized"
+    exit
   end
   
   opts.on( '-l', '--list', 'List supported git hooks') do

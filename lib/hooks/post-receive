@@ -5,4 +5,4 @@ require 'githooks'
 class PostReceive < Githooks::Base
 end
 
-PostReceive.new.execute
+PostReceive.new(ARGV).execute

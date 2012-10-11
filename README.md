@@ -53,6 +53,7 @@ Following key words can be used in your githooks.rb files
 
 ## Example
 ```ruby
+# dummy_githooks.rb
 pre_commit do
   puts "executed in pre commit hook"
 end

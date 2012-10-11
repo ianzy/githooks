@@ -5,4 +5,4 @@ require 'githooks'
 class PreApplypatch < Githooks::Base
 end
 
-PreApplypatch.new.execute
+PreApplypatch.new(ARGV).execute

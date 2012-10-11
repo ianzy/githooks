@@ -5,4 +5,4 @@ require 'githooks'
 class PreAutoGc < Githooks::Base
 end
 
-PreAutoGc.new.execute
+PreAutoGc.new(ARGV).execute

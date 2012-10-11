@@ -5,4 +5,4 @@ require 'githooks'
 class PostRewrite < Githooks::Base
 end
 
-PostRewrite.new.execute
+PostRewrite.new(ARGV).execute

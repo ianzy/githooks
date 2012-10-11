@@ -5,4 +5,4 @@ require 'githooks'
 class PreReceive < Githooks::Base
 end
 
-PreReceive.new.execute
+PreReceive.new(ARGV).execute

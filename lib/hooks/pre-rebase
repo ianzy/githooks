@@ -5,4 +5,4 @@ require 'githooks'
 class PreRebase < Githooks::Base
 end
 
-PreRebase.new.execute
+PreRebase.new(ARGV).execute

@@ -20,6 +20,11 @@ module Githooks
     pre_auto_gc
     post_rewrite]
   class Base
+
+    def initialize(args = nil)
+      @args = args
+    end
+    
     def execute
       lambda {
         hooks = []
@@ -44,9 +49,10 @@ module Githooks
         load file
       end
       
-      env = Object.new
+      # env = Object.new
       each_hook do |hook|
-        env.instance_eval &hook
+        # env.instance_eval &hook
+        hook.call @args
       end
     end
 

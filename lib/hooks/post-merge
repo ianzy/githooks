@@ -5,4 +5,4 @@ require 'githooks'
 class PostMerge < Githooks::Base
 end
 
-PostMerge.new.execute
+PostMerge.new(ARGV).execute

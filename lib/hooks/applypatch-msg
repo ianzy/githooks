@@ -5,4 +5,4 @@ require 'githooks'
 class ApplypatchMsg < Githooks::Base
 end
 
-ApplypatchMsg.new.execute
+ApplypatchMsg.new(ARGV).execute
