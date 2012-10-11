@@ -10,8 +10,6 @@ class String
   end
 end
 
-# base.new.execute
-
 module Githooks
   HookNames = %w[applypatch_msg pre_applypatch post_applypatch
     pre_commit prepare_commit_msg commit_msg post_commit
@@ -22,10 +20,6 @@ module Githooks
     pre_auto_gc
     post_rewrite]
   class Base
-    def method_missing(method, *args)
-      super unless Githooks::HookNames.include? method.to_s
-    end
-    
     def execute
       lambda {
         hooks = []
@@ -38,11 +32,15 @@ module Githooks
             block.call hook
           end
         end
+        
+        Kernel.send :define_method, :method_missing do |method, *args|
+          super(method, args) unless Githooks::HookNames.include? method.to_s
+        end
       }.call
       
       git_root = `git rev-parse --show-toplevel`.chop
       
-      Dir.glob("#{git_root}*_githooks.rb").each do |file|
+      Dir.glob("#{git_root}/**/*_githooks.rb").each do |file|
         load file
       end
       

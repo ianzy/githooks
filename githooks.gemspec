@@ -8,8 +8,8 @@ Gem::Specification.new do |gem|
   gem.version       = Githooks::VERSION
   gem.authors       = ["Yu Zhang"]
   gem.email         = ["ian7zy@gmail.com"]
-  gem.description   = %q{Write a gem description}
-  gem.summary       = %q{Write a gem summary}
+  gem.description   = %q{git hooks framework in Ruby}
+  gem.summary       = %q{A framework to manage git hooks with your source code}
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($/)

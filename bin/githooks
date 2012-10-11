@@ -15,7 +15,7 @@ Description:
 
 BANNER
 
-OptionParser.new do |opts|
+options = OptionParser.new do |opts|
   opts.banner = banner.gsub(/^ {6}/, '')
 
   opts.separator ''
@@ -25,7 +25,7 @@ OptionParser.new do |opts|
     exit unless system("git rev-parse")
     git_root = `git rev-parse --show-toplevel`.chop
     gem_root = File.expand_path "..", File.dirname($0)
-    FileUtils.cp_r(Dir["#{gem_root}/lib/hooks/*"], "#{git_root}/.git/hooks")
+    FileUtils.cp_r(Dir["#{gem_root}/gems/githooks-#{Githooks::VERSION}/lib/hooks/*"], "#{git_root}/.git/hooks")
   end
   
   opts.on( '-l', '--list', 'List supported git hooks') do
@@ -37,5 +37,8 @@ OptionParser.new do |opts|
     puts opts
     exit
   end
-end.parse!
+end
 
+options.parse!
+
+puts options and exit if ARGV[0].nil?
