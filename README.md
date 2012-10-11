@@ -3,8 +3,8 @@
 A framework to manage git hooks with your repository. Codes in *_githooks.rb will be executed by the framework.
 
 ## Convention
-The name of the hook file should look like this filename_githooks.rb
-The typical directory structure with githooks will look like this,
+Githooks will look for files named as filename_githooks.rb in your repository. The typical directory structure with Githooks will look like this,
+```
 /Your repository
   /lib
   /app
@@ -12,7 +12,7 @@ The typical directory structure with githooks will look like this,
   /hooks
     example_githooks.rb
     example2_githooks.rb
-
+```
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -53,14 +53,14 @@ Following key words can be used in your githooks.rb files
 
 ## Example
 ```ruby
-    pre_commit do
-      puts "executed in pre commit hook"
-    end
+pre_commit do
+  puts "executed in pre commit hook"
+end
 
-    commit_msg do
-      puts "executed in commit msg hook"
-      exit -1
-    end
+commit_msg do
+  puts "executed in commit msg hook"
+  exit -1
+end
 ```
 ## Contributing
 
