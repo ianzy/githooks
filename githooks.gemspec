@@ -10,7 +10,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["ian7zy@gmail.com"]
   gem.description   = %q{git hooks framework in Ruby}
   gem.summary       = %q{A framework to manage git hooks with your source code}
-  gem.homepage      = ""
+  gem.homepage      = "https://github.com/ianzy/githooks"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
