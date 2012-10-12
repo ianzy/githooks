@@ -3,14 +3,13 @@ module Githooks
     def ask(question, default=true)
       option_string = default ? '[Y/n]' : '[y/N]'
       response = nil
-      while (response != 'Y') && (response != 'N') && (response != "\r")
+      while (response != "Y\n") && (response != "N\n") && (response != "\n")
         print "#{question} #{option_string} "
         response = gets
-        puts response
         response.upcase!
       end
-      return default if response == "\r"
-      return (response == 'Y') ? true : false
+      return default if response == "\n"
+      return (response == "Y\n") ? true : false
     end
   end
 end
