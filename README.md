@@ -84,3 +84,9 @@ The example hook checks whether the commit message follows the provided pattern.
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+## TODO
+
+1. Testing / CI
+2. Provide git related information in the environment
+3. Share context across hooks
