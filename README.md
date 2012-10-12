@@ -33,7 +33,7 @@ After the gem is installed, you need to initialize githooks in your repository.
 
     $ githooks --init
 
-Following key words can be used in your githooks.rb files
+Following key words can be used in your filename_githooks.rb files
 *   applypatch_msg
 *   pre_applypatch
 *   post_applypatch
@@ -51,6 +51,8 @@ Following key words can be used in your githooks.rb files
 *   pre_auto_gc
 *   post_rewrite
 
+The framework enable you to group different git hooks in one file and manage hooks based on their functionalities. Arguments for a specific hook is yielded to its corresponding marco. For example, you can access commit file through commit_msg { |args| p args[0] }  
+
 ## Example
 ```ruby
 # dummy_githooks.rb
@@ -58,11 +60,23 @@ pre_commit do
   puts "executed in pre commit hook"
 end
 
-commit_msg do
-  puts "executed in commit msg hook"
-  exit -1
+commit_msg do |args|
+  git_root = `git rev-parse --show-toplevel`.chop
+  
+  message_file = args[0]
+  message = File.read(git_root+'/'+message_file)
+  
+  $regex = /\[ref: (\d+)\]/
+  
+  if !$regex.match(message)
+    puts "[POLICY] Your message is not formatted correctly"
+    exit 1
+  end
 end
 ```
+
+The example hook checks whether the commit message follows the provided pattern. 
+
 ## Contributing
 
 1. Fork it
