@@ -1,6 +1,6 @@
 require "githooks/version"
 require "githooks/base"
+require "githooks/helper"
 
 module Githooks
-  # Your code goes here...
 end
