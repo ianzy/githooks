@@ -11,9 +11,7 @@ module Githooks
 
     def initialize(args = nil)
       @args = args
-    end
-    
-    def execute
+      
       lambda {
         hooks = []
         Kernel.send :define_method, self.class.name.underscore do |&block|
@@ -30,7 +28,9 @@ module Githooks
           super(method, args) unless Githooks::HookNames.include? method.to_s
         end
       }.call
-      
+    end
+    
+    def execute     
       git_root = `git rev-parse --show-toplevel`.chop
       
       Dir.glob("#{git_root}/**/*_githooks.rb").each do |file|

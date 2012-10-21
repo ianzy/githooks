@@ -1,4 +1,5 @@
 require File.expand_path('../../lib/githooks', __FILE__)
+require 'test_hook'
 
 
 RSpec.configure do |config|
