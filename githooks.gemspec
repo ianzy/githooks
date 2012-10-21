@@ -8,7 +8,7 @@ Gem::Specification.new do |gem|
   gem.version       = Githooks::VERSION
   gem.authors       = ["Yu Zhang"]
   gem.email         = ["ian7zy@gmail.com"]
-  gem.description   = %q{git hooks framework in Ruby}
+  gem.description   = %q{A git hooks framework in Ruby}
   gem.summary       = %q{A framework to manage git hooks with your source code}
   gem.homepage      = "https://github.com/ianzy/githooks"
 
@@ -16,4 +16,7 @@ Gem::Specification.new do |gem|
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
+  
+  # Development Dependencies
+  gem.add_development_dependency "rspec"
 end
