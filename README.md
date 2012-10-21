@@ -1,4 +1,4 @@
-# Githooks
+# Githooks [![Build Status](https://secure.travis-ci.org/ianzy/githooks.png)](http://travis-ci.org/ianzy/githooks)
 
 A framework to manage git hooks with your repository. Codes in *_githooks.rb will be executed by the framework.
 
