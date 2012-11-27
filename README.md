@@ -87,6 +87,5 @@ The example hook checks whether the commit message follows the provided pattern.
 
 ## TODO
 
-1. Testing / CI
-2. Provide git related information in the environment
-3. Share context across hooks
+1. Provide git related information in the environment
+2. Share context across hooks
