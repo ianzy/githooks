@@ -3,7 +3,7 @@
 A framework to manage git hooks with your repository. Codes in *_githooks.rb will be executed by the framework.
 
 ## Convention
-Githooks will look for files named as filename_githooks.rb in your repository. The typical directory structure with Githooks will look like this,
+Githooks will look for files named as filename_githooks.rb under githooks folder in your repository. The typical directory structure with Githooks will look like this,
 ```
 /Your repository
   /lib

@@ -33,14 +33,13 @@ module Githooks
     def execute     
       git_root = `git rev-parse --show-toplevel`.chop
       
-      Dir.glob("#{git_root}/**/*_githooks.rb").each do |file|
+      Dir.glob("#{git_root}/githooks/**/*_githooks.rb").each do |file|
         load file
       end
       
-      # env = Object.new
+      env = Object.new
       each_hook do |hook|
-        # env.instance_eval &hook
-        hook.call @args
+        env.instance_exec @args, &hook
       end
     end
 

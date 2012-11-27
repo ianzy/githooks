@@ -9,7 +9,7 @@ Gem::Specification.new do |gem|
   gem.authors       = ["Yu Zhang"]
   gem.email         = ["ian7zy@gmail.com"]
   gem.description   = %q{A git hooks framework in Ruby}
-  gem.summary       = %q{A framework to manage git hooks with your source code}
+  gem.summary       = %q{A framework to manage git hooks with your repository}
   gem.homepage      = "https://github.com/ianzy/githooks"
 
   gem.files         = `git ls-files`.split($/)
