@@ -9,7 +9,7 @@ Githooks will look for files named as filename_githooks.rb under githooks folder
   /lib
   /app
   ...
-  /hooks
+  /githooks
     example_githooks.rb
     example2_githooks.rb
 ```
