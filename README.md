@@ -23,7 +23,7 @@ And then execute:
 
     $ bundle
 
-Or install it yourself as:
+Or install it yourself (recommended if you use `bundle install --path vendor/bundle`):
 
     $ gem install githooks
 
